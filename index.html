@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Pencarian Situs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+margin-top:100px;
+background:#111;
+color:white;
+}
+
+input{
+padding:12px;
+width:250px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:12px 20px;
+border:none;
+background:red;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff3333;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Cari Situs</h2>
+
+<input type="text" id="search" placeholder="Ketik nama situs...">
+<button onclick="cari()">Cari</button>
+
+<script>
+
+function cari(){
+
+var keyword = document.getElementById("search").value.toLowerCase();
+
+if(keyword == "Sirenbola"){
+window.location.href = "https://sirenbola.com";
+}
+
+else if(keyword == "sirenbola"){
+window.location.href = "https://sirenbola.com";
+}
+
+else{
+alert("Situs tidak ditemukan");
+}
+
+}
+
+</script>
+
+</body>
+</html>
