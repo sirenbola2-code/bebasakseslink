@@ -24,28 +24,43 @@ body{
     box-shadow:0 0 25px rgba(255,0,0,0.4);
 }
 
-/* LOGO ANIMATION */
+/* LOGO WRAP */
+.logo-wrap{
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+}
+
+/* LOGO */
 .logo{
-    width:200px;
-    margin-bottom:20px;
-    animation: glow 2s infinite alternate, float 3s ease-in-out infinite;
+    width:220px;
 }
 
-/* GLOW EFFECT */
-@keyframes glow{
-    from{
-        filter: drop-shadow(0 0 5px red);
-    }
-    to{
-        filter: drop-shadow(0 0 20px red);
-    }
+/* SHINE EFFECT */
+.logo-wrap::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-75%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
+    );
+    transform:skewX(-25deg);
+    animation: shine 3s infinite;
 }
 
-/* FLOAT EFFECT */
-@keyframes float{
-    0%{ transform: translateY(0px); }
-    50%{ transform: translateY(-8px); }
-    100%{ transform: translateY(0px); }
+@keyframes shine{
+    0%{
+        left:-75%;
+    }
+    100%{
+        left:125%;
+    }
 }
 
 /* INPUT */
@@ -73,7 +88,6 @@ button:hover{
     background:#ff3333;
 }
 
-/* INFO */
 .info{
     margin-top:40px;
     font-size:14px;
@@ -87,7 +101,9 @@ button:hover{
 
 <div class="container">
 
+<div class="logo-wrap">
 <img src="https://www.sirenbola8.com/assets/logo-sirenbola.png" class="logo">
+</div>
 
 <h2>Pencarian Situs</h2>
 
