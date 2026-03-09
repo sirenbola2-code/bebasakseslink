@@ -6,54 +6,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
-font-family: Arial;
-text-align:center;
-margin-top:100px;
-background:#111;
-color:white;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    margin-top:80px;
+    background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+    color:white;
 }
 
-.box{
-margin-top:20px;
+/* CONTAINER */
+.container{
+    background:#161616;
+    display:inline-block;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(255,0,0,0.4);
 }
 
+/* LOGO */
+.logo{
+    width:200px;
+    margin-bottom:20px;
+}
+
+/* INPUT */
 input{
-padding:12px;
-width:250px;
-border-radius:5px;
-border:none;
+    padding:12px;
+    width:260px;
+    border-radius:6px;
+    border:none;
+    outline:none;
+    font-size:14px;
 }
 
+/* BUTTON */
 button{
-padding:12px 20px;
-border:none;
-background:red;
-color:white;
-border-radius:5px;
-cursor:pointer;
+    padding:12px 22px;
+    border:none;
+    background:red;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
 button:hover{
-background:#ff3333;
+    background:#ff3333;
 }
 
+/* INFO */
 .info{
-margin-top:40px;
-font-size:14px;
-color:#ccc;
+    margin-top:40px;
+    font-size:14px;
+    color:#ccc;
 }
+
 </style>
 </head>
 
 <body>
+
+<div class="container">
+
+<img src="https://www.sirenbola8.com/assets/logo-sirenbola.png" class="logo">
 
 <h2>Pencarian Situs</h2>
 
 <p>1. Masukkan nama situs yang Anda inginkan</p>
 <p>2. Klik tombol <b>"CARI"</b></p>
 
-<div class="box">
+<div>
 <input type="text" id="search" placeholder="Masukkan nama situs...">
 <button onclick="cari()">CARI</button>
 </div>
@@ -63,16 +86,16 @@ color:#ccc;
 <p>Bebas Kendala dimana & kapan saja</p>
 </div>
 
+</div>
+
 <script>
 
 function cari(){
-
 var keyword = document.getElementById("search").value.toLowerCase();
 
 if(keyword == "sirenbola"){
 window.location.href = "https://sirenbola.com";
 }
-
 else{
 alert("Situs tidak ditemukan");
 }
