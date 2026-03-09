@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 <title>Pencarian Situs</title>
@@ -13,6 +12,10 @@ text-align:center;
 margin-top:100px;
 background:#111;
 color:white;
+}
+
+.box{
+margin-top:20px;
 }
 
 input{
@@ -34,16 +37,31 @@ cursor:pointer;
 button:hover{
 background:#ff3333;
 }
-</style>
 
+.info{
+margin-top:40px;
+font-size:14px;
+color:#ccc;
+}
+</style>
 </head>
 
 <body>
 
-<h2>Masukkan Nama Situs:</h2>
+<h2>Pencarian Situs</h2>
 
-<input type="text" id="search" placeholder="Ketik nama situs...">
-<button onclick="cari()">Cari</button>
+<p>1. Masukkan nama situs yang Anda inginkan</p>
+<p>2. Klik tombol <b>"CARI"</b></p>
+
+<div class="box">
+<input type="text" id="search" placeholder="Masukkan nama situs...">
+<button onclick="cari()">CARI</button>
+</div>
+
+<div class="info">
+<p><b>Lindungi lalu lintas Online Anda</b></p>
+<p>Bebas Kendala dimana & kapan saja</p>
+</div>
 
 <script>
 
@@ -51,11 +69,7 @@ function cari(){
 
 var keyword = document.getElementById("search").value.toLowerCase();
 
-if(keyword == "Sirenbola"){
-window.location.href = "https://sirenbola.com";
-}
-
-else if(keyword == "sirenbola"){
+if(keyword == "sirenbola"){
 window.location.href = "https://sirenbola.com";
 }
 
@@ -69,4 +83,3 @@ alert("Situs tidak ditemukan");
 
 </body>
 </html>
-
