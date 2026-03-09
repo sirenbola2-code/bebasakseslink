@@ -13,10 +13,8 @@ text-align:center;
 margin-top:70px;
 color:white;
 background:linear-gradient(135deg,#06152e,#0a3d91,#1b6cff);
-overflow:hidden;
 }
 
-/* BOX */
 .container{
 background:rgba(0,0,0,0.55);
 display:inline-block;
@@ -25,7 +23,6 @@ border-radius:15px;
 box-shadow:0 0 30px rgba(0,140,255,0.7);
 }
 
-/* LOGO */
 .logo-wrap{
 position:relative;
 display:inline-block;
@@ -36,7 +33,6 @@ overflow:hidden;
 width:220px;
 }
 
-/* EFEK KILAU */
 .logo-wrap:after{
 content:"";
 position:absolute;
@@ -44,12 +40,7 @@ top:0;
 left:-80%;
 width:50%;
 height:100%;
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.9),
-transparent
-);
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.9),transparent);
 transform:skewX(-25deg);
 animation:shine 3s infinite;
 }
@@ -59,7 +50,6 @@ animation:shine 3s infinite;
 100%{left:130%;}
 }
 
-/* INPUT */
 input{
 padding:12px;
 width:250px;
@@ -68,7 +58,6 @@ border:none;
 outline:none;
 }
 
-/* BUTTON */
 button{
 padding:12px 20px;
 border:none;
@@ -84,12 +73,6 @@ background:#4db8ff;
 box-shadow:0 0 20px #4db8ff;
 }
 
-.info{
-margin-top:30px;
-color:#ddd;
-font-size:14px;
-}
-
 </style>
 </head>
 
@@ -103,54 +86,35 @@ font-size:14px;
 
 <h2>Pencarian Situs</h2>
 
-<p>1. Masukkan nama situs</p>
-<p>2. Klik tombol <b>CARI</b></p>
-
 <br>
 
-<input type="text" id="search" placeholder="Masukkan nama situs...">
-<button onclick="_0x12()">CARI</button>
-
-<div class="info">
-<p><b>Lindungi lalu lintas Online Anda</b></p>
-<p>Bebas Kendala dimana & kapan saja</p>
-</div>
+<input type="text" id="s">
+<button onclick="_0x8a()">CARI</button>
 
 </div>
 
 <script>
 
-/* fungsi cari (diacak sedikit) */
-function _0x12(){
-var _0x1=document.getElementById("search").value.toLowerCase();
-if(_0x1=="sirenbola"){
+/* blok klik kanan */
+document.addEventListener("contextmenu",function(e){e.preventDefault()});
+
+/* blok inspect */
+document.onkeydown=function(e){
+if(e.keyCode==123)return false;
+if(e.ctrlKey&&e.shiftKey&&e.keyCode==73)return false;
+if(e.ctrlKey&&e.keyCode==85)return false;
+};
+
+/* fungsi diacak */
+function _0x8a(){
+var _0x1=document.getElementById("s").value.toLowerCase();
+var _0x2="sirenbola";
+if(_0x1==_0x2){
 window.location.href="https://sirenbola.com";
 }else{
 alert("Situs tidak ditemukan");
 }
 }
-
-/* blok klik kanan */
-document.addEventListener("contextmenu",function(e){
-e.preventDefault();
-});
-
-/* blok inspect */
-document.onkeydown=function(e){
-
-if(e.keyCode==123){
-return false;
-}
-
-if(e.ctrlKey && e.shiftKey && e.keyCode==73){
-return false;
-}
-
-if(e.ctrlKey && e.keyCode==85){
-return false;
-}
-
-};
 
 </script>
 
