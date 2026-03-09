@@ -1,120 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pencarian Situs</title>
 <meta charset="UTF-8">
+<title>Pencarian Situs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 body{
-    font-family: Arial, sans-serif;
-    text-align:center;
-    margin-top:60px;
-    color:white;
-    overflow:hidden;
-
-    /* BACKGROUND BIRU */
-    background: linear-gradient(135deg,#071a3a,#0f3c7a,#1b5fbf);
+font-family:Arial;
+text-align:center;
+margin-top:70px;
+color:white;
+background:linear-gradient(135deg,#06152e,#0a3d91,#1b6cff);
+overflow:hidden;
 }
 
-/* EFEK BINTANG */
-body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(#7ec8ff 1px, transparent 1px);
-    background-size:60px 60px;
-    animation: stars 15s linear infinite;
-    opacity:0.25;
-}
-
-@keyframes stars{
-    from{transform:translateY(0);}
-    to{transform:translateY(-200px);}
-}
-
-/* CONTAINER */
+/* BOX */
 .container{
-    position:relative;
-    background:rgba(0,0,0,0.55);
-    display:inline-block;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 0 35px rgba(0,150,255,0.6);
-}
-
-/* LOGO WRAP */
-.logo-wrap{
-    position:relative;
-    display:inline-block;
-    overflow:hidden;
+background:rgba(0,0,0,0.55);
+display:inline-block;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 30px rgba(0,140,255,0.7);
 }
 
 /* LOGO */
-.logo{
-    width:220px;
+.logo-wrap{
+position:relative;
+display:inline-block;
+overflow:hidden;
 }
 
-/* EFEK KILAU LOGO */
-.logo-wrap::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-80%;
-    width:50%;
-    height:100%;
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.9),
-        transparent
-    );
-    transform:skewX(-25deg);
-    animation: shine 3s infinite;
+.logo{
+width:220px;
+}
+
+/* EFEK KILAU */
+.logo-wrap:after{
+content:"";
+position:absolute;
+top:0;
+left:-80%;
+width:50%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.9),
+transparent
+);
+transform:skewX(-25deg);
+animation:shine 3s infinite;
 }
 
 @keyframes shine{
-    0%{ left:-80%; }
-    100%{ left:130%; }
+0%{left:-80%;}
+100%{left:130%;}
 }
 
 /* INPUT */
 input{
-    padding:12px;
-    width:260px;
-    border-radius:6px;
-    border:none;
-    outline:none;
-    font-size:14px;
+padding:12px;
+width:250px;
+border-radius:6px;
+border:none;
+outline:none;
 }
 
 /* BUTTON */
 button{
-    padding:12px 22px;
-    border:none;
-    background:#1da1ff;
-    color:white;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:bold;
-    box-shadow:0 0 12px #1da1ff;
+padding:12px 20px;
+border:none;
+background:#1da1ff;
+color:white;
+border-radius:6px;
+cursor:pointer;
+box-shadow:0 0 10px #1da1ff;
 }
 
 button:hover{
-    background:#4db8ff;
-    box-shadow:0 0 20px #4db8ff;
+background:#4db8ff;
+box-shadow:0 0 20px #4db8ff;
 }
 
 .info{
-    margin-top:35px;
-    font-size:14px;
-    color:#ddd;
+margin-top:30px;
+color:#ddd;
+font-size:14px;
 }
 
 </style>
@@ -130,13 +103,13 @@ button:hover{
 
 <h2>Pencarian Situs</h2>
 
-<p>1. Masukkan nama situs yang Anda inginkan</p>
-<p>2. Klik tombol <b>"CARI"</b></p>
+<p>1. Masukkan nama situs</p>
+<p>2. Klik tombol <b>CARI</b></p>
 
-<br><br>
+<br>
 
 <input type="text" id="search" placeholder="Masukkan nama situs...">
-<button onclick="cari()">CARI</button>
+<button onclick="_0x12()">CARI</button>
 
 <div class="info">
 <p><b>Lindungi lalu lintas Online Anda</b></p>
@@ -147,17 +120,37 @@ button:hover{
 
 <script>
 
-function cari(){
-var keyword = document.getElementById("search").value.toLowerCase();
-
-if(keyword == "sirenbola"){
-window.location.href = "https://sirenbola.com";
-}
-else{
+/* fungsi cari (diacak sedikit) */
+function _0x12(){
+var _0x1=document.getElementById("search").value.toLowerCase();
+if(_0x1=="sirenbola"){
+window.location.href="https://sirenbola.com";
+}else{
 alert("Situs tidak ditemukan");
 }
-
 }
+
+/* blok klik kanan */
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
+
+/* blok inspect */
+document.onkeydown=function(e){
+
+if(e.keyCode==123){
+return false;
+}
+
+if(e.ctrlKey && e.shiftKey && e.keyCode==73){
+return false;
+}
+
+if(e.ctrlKey && e.keyCode==85){
+return false;
+}
+
+};
 
 </script>
 
