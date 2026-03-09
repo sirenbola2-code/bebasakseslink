@@ -24,10 +24,28 @@ body{
     box-shadow:0 0 25px rgba(255,0,0,0.4);
 }
 
-/* LOGO */
+/* LOGO ANIMATION */
 .logo{
     width:200px;
     margin-bottom:20px;
+    animation: glow 2s infinite alternate, float 3s ease-in-out infinite;
+}
+
+/* GLOW EFFECT */
+@keyframes glow{
+    from{
+        filter: drop-shadow(0 0 5px red);
+    }
+    to{
+        filter: drop-shadow(0 0 20px red);
+    }
+}
+
+/* FLOAT EFFECT */
+@keyframes float{
+    0%{ transform: translateY(0px); }
+    50%{ transform: translateY(-8px); }
+    100%{ transform: translateY(0px); }
 }
 
 /* INPUT */
