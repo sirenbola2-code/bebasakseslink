@@ -11,12 +11,14 @@ body{
     font-family: Arial, sans-serif;
     text-align:center;
     margin-top:60px;
-    background:#0a0a0a;
     color:white;
     overflow:hidden;
+
+    /* BACKGROUND BIRU */
+    background: linear-gradient(135deg,#071a3a,#0f3c7a,#1b5fbf);
 }
 
-/* BINTANG BACKGROUND */
+/* EFEK BINTANG */
 body::before{
     content:"";
     position:fixed;
@@ -26,10 +28,10 @@ body::before{
     height:100%;
     background-image:
     radial-gradient(white 1px, transparent 1px),
-    radial-gradient(white 1px, transparent 1px);
-    background-size:50px 50px;
-    animation: stars 10s linear infinite;
-    opacity:0.3;
+    radial-gradient(#7ec8ff 1px, transparent 1px);
+    background-size:60px 60px;
+    animation: stars 15s linear infinite;
+    opacity:0.25;
 }
 
 @keyframes stars{
@@ -40,11 +42,11 @@ body::before{
 /* CONTAINER */
 .container{
     position:relative;
-    background:#161616;
+    background:rgba(0,0,0,0.55);
     display:inline-block;
     padding:40px;
     border-radius:15px;
-    box-shadow:0 0 30px rgba(255,0,0,0.5);
+    box-shadow:0 0 35px rgba(0,150,255,0.6);
 }
 
 /* LOGO WRAP */
@@ -59,7 +61,7 @@ body::before{
     width:220px;
 }
 
-/* KILAU LOGO */
+/* EFEK KILAU LOGO */
 .logo-wrap::after{
     content:"";
     position:absolute;
@@ -96,23 +98,23 @@ input{
 button{
     padding:12px 22px;
     border:none;
-    background:red;
+    background:#1da1ff;
     color:white;
     border-radius:6px;
     cursor:pointer;
     font-weight:bold;
-    box-shadow:0 0 10px red;
+    box-shadow:0 0 12px #1da1ff;
 }
 
 button:hover{
-    background:#ff3333;
-    box-shadow:0 0 20px red;
+    background:#4db8ff;
+    box-shadow:0 0 20px #4db8ff;
 }
 
 .info{
     margin-top:35px;
     font-size:14px;
-    color:#ccc;
+    color:#ddd;
 }
 
 </style>
