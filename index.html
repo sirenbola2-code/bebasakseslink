@@ -12,17 +12,26 @@ font-family:Arial;
 text-align:center;
 margin-top:70px;
 color:white;
-background:linear-gradient(135deg,#06152e,#0a3d91,#1b6cff);
+
+/* NAVY BLACK BLUE */
+background:linear-gradient(135deg,#020617,#06152e,#0a3d91,#000814);
+
 overflow:hidden;
 }
 
 /* BOX */
 .container{
-background:rgba(0,0,0,0.55);
+background:rgba(0,0,0,0.6);
 display:inline-block;
 padding:40px;
-border-radius:15px;
-box-shadow:0 0 30px rgba(0,140,255,0.7);
+border-radius:18px;
+
+/* GLOW GOLD + BLUE */
+box-shadow: 
+0 0 20px rgba(255,215,0,0.3),
+0 0 40px rgba(0,140,255,0.4);
+
+backdrop-filter: blur(10px);
 }
 
 /* LOGO */
@@ -36,7 +45,7 @@ overflow:hidden;
 width:220px;
 }
 
-/* EFEK KILAU */
+/* EFEK KILAU GOLD */
 .logo-wrap:after{
 content:"";
 position:absolute;
@@ -47,7 +56,7 @@ height:100%;
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,255,255,0.9),
+rgba(255,215,0,0.9),
 transparent
 );
 transform:skewX(-25deg);
@@ -63,31 +72,53 @@ animation:shine 3s infinite;
 input{
 padding:12px;
 width:250px;
-border-radius:6px;
+border-radius:8px;
 border:none;
 outline:none;
+
+/* efek glow halus */
+background:#0f172a;
+color:white;
+box-shadow:0 0 10px rgba(255,215,0,0.2);
 }
 
 /* BUTTON */
 button{
 padding:12px 20px;
 border:none;
-background:#1da1ff;
-color:white;
-border-radius:6px;
+
+/* GRADIENT BLUE → GOLD */
+background:linear-gradient(45deg,#1da1ff,#ffd700);
+
+color:black;
+font-weight:bold;
+border-radius:8px;
 cursor:pointer;
-box-shadow:0 0 10px #1da1ff;
+
+/* GLOW GOLD */
+box-shadow:0 0 15px rgba(255,215,0,0.7);
+
+transition:0.3s;
 }
 
 button:hover{
-background:#4db8ff;
-box-shadow:0 0 20px #4db8ff;
+background:linear-gradient(45deg,#4db8ff,#ffea70);
+box-shadow:0 0 25px rgba(255,215,0,1);
+transform:scale(1.05);
 }
 
+/* TEXT INFO */
 .info{
 margin-top:30px;
-color:#ddd;
+color:#ccc;
 font-size:14px;
+}
+
+h2{
+/* TEXT GOLD EFFECT */
+background:linear-gradient(45deg,#fff,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 </style>
@@ -120,7 +151,6 @@ font-size:14px;
 
 <script>
 
-/* fungsi cari (diacak sedikit) */
 function _0x12(){
 var _0x1=document.getElementById("search").value.toLowerCase();
 if(_0x1=="sirenbola"){
