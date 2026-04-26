@@ -1,54 +1,202 @@
-/* BUTTON */
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pencarian Situs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+margin-top:70px;
+color:white;
+background:linear-gradient(135deg,#06152e,#0a3d91,#1b6cff);
+overflow:hidden;
+}
+
+/* BOX */
+.container{
+background:rgba(0,0,0,0.55);
+display:inline-block;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 30px rgba(0,140,255,0.7);
+}
+
+/* LOGO */
+.logo-wrap{
+position:relative;
+display:inline-block;
+overflow:hidden;
+}
+
+.logo{
+width:220px;
+}
+
+/* EFEK KILAU LOGO */
+.logo-wrap:after{
+content:"";
+position:absolute;
+top:0;
+left:-80%;
+width:50%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.9),
+transparent
+);
+transform:skewX(-25deg);
+animation:shine 3s infinite;
+}
+
+@keyframes shine{
+0%{left:-80%;}
+100%{left:130%;}
+}
+
+/* INPUT */
+input{
+padding:12px;
+width:250px;
+border-radius:6px;
+border:none;
+outline:none;
+}
+
+/* ========================= */
+/* BUTTON FIX + EFEK CAHAYA */
+/* ========================= */
+
 button{
 position:relative;
 padding:12px 20px;
 border:none;
-background:linear-gradient(45deg,#1da1ff,#ffd700);
-color:black;
-font-weight:bold;
-border-radius:8px;
+background:#1da1ff;
+color:white;
+border-radius:6px;
 cursor:pointer;
 overflow:hidden;
+z-index:1;
 
-/* glow halus */
-box-shadow:0 0 15px rgba(255,215,0,0.6);
-
+box-shadow:0 0 10px #1da1ff;
 transition:0.3s;
 }
 
-/* EFEK CAHAYA */
-button::after{
+/* TEXT BIAR DI ATAS */
+button span{
+position:relative;
+z-index:2;
+}
+
+/* CAHAYA */
+button::before{
 content:"";
 position:absolute;
 top:0;
-left:-75%;
-width:50%;
+left:-100%;
+width:60%;
 height:100%;
-
-/* GOLD SHINE */
 background:linear-gradient(
 120deg,
 transparent,
 rgba(255,255,255,0.8),
 transparent
 );
-
 transform:skewX(-25deg);
 }
 
-/* ANIMASI SAAT HOVER */
-button:hover::after{
-animation:shineMove 0.8s ease;
+/* ANIMASI HOVER */
+button:hover::before{
+animation:shineBtn 0.8s forwards;
 }
 
-@keyframes shineMove{
-0%{left:-75%;}
-100%{left:125%;}
+@keyframes shineBtn{
+0%{left:-100%;}
+100%{left:130%;}
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 button:hover{
+background:#4db8ff;
+box-shadow:0 0 20px #4db8ff;
 transform:scale(1.05);
-box-shadow:0 0 25px rgba(255,215,0,1);
-background:linear-gradient(45deg,#4db8ff,#ffea70);
 }
+
+.info{
+margin-top:30px;
+color:#ddd;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo-wrap">
+<img src="https://media.fastchecker.us/idnsmedia/is/assets/themes/aadrgq/img/logo-big.png?v=1" class="logo">
+</div>
+
+<h2>Pencarian Situs</h2>
+
+<p>1. Masukkan nama situs</p>
+<p>2. Klik tombol <b>CARI</b></p>
+
+<br>
+
+<input type="text" id="search" placeholder="Masukkan nama situs...">
+
+<!-- PENTING: pakai span -->
+<button onclick="_0x12()"><span>CARI</span></button>
+
+<div class="info">
+<p><b>Lindungi lalu lintas Online Anda</b></p>
+<p>Bebas Kendala dimana & kapan saja</p>
+</div>
+
+</div>
+
+<script>
+
+function _0x12(){
+var _0x1=document.getElementById("search").value.toLowerCase();
+if(_0x1=="sirenbola"){
+window.location.href="https://sirenbola.com";
+}else{
+alert("Situs tidak ditemukan");
+}
+}
+
+/* blok klik kanan */
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
+
+/* blok inspect */
+document.onkeydown=function(e){
+
+if(e.keyCode==123){
+return false;
+}
+
+if(e.ctrlKey && e.shiftKey && e.keyCode==73){
+return false;
+}
+
+if(e.ctrlKey && e.keyCode==85){
+return false;
+}
+
+};
+
+</script>
+
+</body>
+</html>
