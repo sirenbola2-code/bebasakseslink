@@ -12,17 +12,24 @@ font-family:Arial;
 text-align:center;
 margin-top:70px;
 color:white;
-background:linear-gradient(135deg,#06152e,#0a3d91,#1b6cff);
+
+/* NAVY DARK FULL */
+background:linear-gradient(135deg,#020617,#020617,#06152e,#0a1f44);
+
 overflow:hidden;
 }
 
 /* BOX */
 .container{
-background:rgba(0,0,0,0.55);
+background:rgba(0,0,0,0.65);
 display:inline-block;
 padding:40px;
-border-radius:15px;
-box-shadow:0 0 30px rgba(0,140,255,0.7);
+border-radius:18px;
+
+/* GOLD + SOFT BLUE GLOW */
+box-shadow: 
+0 0 20px rgba(255,215,0,0.25),
+0 0 40px rgba(0,80,200,0.25);
 }
 
 /* LOGO */
@@ -36,7 +43,7 @@ overflow:hidden;
 width:220px;
 }
 
-/* EFEK KILAU LOGO */
+/* EFEK KILAU GOLD */
 .logo-wrap:after{
 content:"";
 position:absolute;
@@ -47,7 +54,7 @@ height:100%;
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,255,255,0.9),
+rgba(255,215,0,0.8),
 transparent
 );
 transform:skewX(-25deg);
@@ -63,37 +70,45 @@ animation:shine 3s infinite;
 input{
 padding:12px;
 width:250px;
-border-radius:6px;
+border-radius:8px;
 border:none;
 outline:none;
+
+background:#020617;
+color:white;
+
+box-shadow:0 0 10px rgba(255,215,0,0.2);
 }
 
 /* ========================= */
-/* BUTTON FIX + EFEK CAHAYA */
+/* BUTTON GOLD PREMIUM */
 /* ========================= */
 
 button{
 position:relative;
-padding:12px 20px;
+padding:12px 22px;
 border:none;
-background:#1da1ff;
-color:white;
-border-radius:6px;
+
+/* GOLD GRADIENT */
+background:linear-gradient(45deg,#d4af37,#ffd700,#fff3a0);
+color:#111;
+font-weight:bold;
+
+border-radius:8px;
 cursor:pointer;
 overflow:hidden;
-z-index:1;
 
-box-shadow:0 0 10px #1da1ff;
+box-shadow:0 0 15px rgba(255,215,0,0.6);
 transition:0.3s;
 }
 
-/* TEXT BIAR DI ATAS */
+/* TEXT */
 button span{
 position:relative;
 z-index:2;
 }
 
-/* CAHAYA */
+/* CAHAYA JALAN */
 button::before{
 content:"";
 position:absolute;
@@ -104,13 +119,13 @@ height:100%;
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,255,255,0.8),
+rgba(255,255,255,0.9),
 transparent
 );
 transform:skewX(-25deg);
 }
 
-/* ANIMASI HOVER */
+/* ANIMASI */
 button:hover::before{
 animation:shineBtn 0.8s forwards;
 }
@@ -122,15 +137,21 @@ animation:shineBtn 0.8s forwards;
 
 /* HOVER */
 button:hover{
-background:#4db8ff;
-box-shadow:0 0 20px #4db8ff;
 transform:scale(1.05);
+box-shadow:0 0 25px rgba(255,215,0,1);
 }
 
+/* TEXT */
 .info{
 margin-top:30px;
-color:#ddd;
+color:#ccc;
 font-size:14px;
+}
+
+h2{
+background:linear-gradient(45deg,#fff,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 </style>
@@ -153,7 +174,6 @@ font-size:14px;
 
 <input type="text" id="search" placeholder="Masukkan nama situs...">
 
-<!-- PENTING: pakai span -->
 <button onclick="_0x12()"><span>CARI</span></button>
 
 <div class="info">
@@ -174,25 +194,17 @@ alert("Situs tidak ditemukan");
 }
 }
 
-/* blok klik kanan */
 document.addEventListener("contextmenu",function(e){
 e.preventDefault();
 });
 
-/* blok inspect */
 document.onkeydown=function(e){
 
-if(e.keyCode==123){
-return false;
-}
+if(e.keyCode==123){ return false; }
 
-if(e.ctrlKey && e.shiftKey && e.keyCode==73){
-return false;
-}
+if(e.ctrlKey && e.shiftKey && e.keyCode==73){ return false; }
 
-if(e.ctrlKey && e.keyCode==85){
-return false;
-}
+if(e.ctrlKey && e.keyCode==85){ return false; }
 
 };
 
