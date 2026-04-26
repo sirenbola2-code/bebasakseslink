@@ -13,23 +13,19 @@ text-align:center;
 margin-top:70px;
 color:white;
 
-/* NAVY DARK FULL */
-background:linear-gradient(135deg,#020617,#020617,#06152e,#0a1f44);
+/* NAVY DARK */
+background:linear-gradient(135deg,#020617,#06152e,#0a3d91);
 
 overflow:hidden;
 }
 
 /* BOX */
 .container{
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,0.55);
 display:inline-block;
 padding:40px;
-border-radius:18px;
-
-/* GOLD + SOFT BLUE GLOW */
-box-shadow: 
-0 0 20px rgba(255,215,0,0.25),
-0 0 40px rgba(0,80,200,0.25);
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,120,255,0.4);
 }
 
 /* LOGO */
@@ -43,7 +39,7 @@ overflow:hidden;
 width:220px;
 }
 
-/* EFEK KILAU GOLD */
+/* EFEK KILAU LOGO */
 .logo-wrap:after{
 content:"";
 position:absolute;
@@ -54,7 +50,7 @@ height:100%;
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,215,0,0.8),
+rgba(255,255,255,0.8),
 transparent
 );
 transform:skewX(-25deg);
@@ -70,35 +66,26 @@ animation:shine 3s infinite;
 input{
 padding:12px;
 width:250px;
-border-radius:8px;
+border-radius:6px;
 border:none;
 outline:none;
-
-background:#020617;
-color:white;
-
-box-shadow:0 0 10px rgba(255,215,0,0.2);
 }
 
 /* ========================= */
-/* BUTTON GOLD PREMIUM */
+/* BUTTON NAVY + SHINE HALUS */
 /* ========================= */
 
 button{
 position:relative;
-padding:12px 22px;
+padding:12px 20px;
 border:none;
-
-/* GOLD GRADIENT */
-background:linear-gradient(45deg,#d4af37,#ffd700,#fff3a0);
-color:#111;
-font-weight:bold;
-
-border-radius:8px;
+background:#1da1ff;
+color:white;
+border-radius:6px;
 cursor:pointer;
 overflow:hidden;
 
-box-shadow:0 0 15px rgba(255,215,0,0.6);
+box-shadow:0 0 10px #1da1ff;
 transition:0.3s;
 }
 
@@ -108,50 +95,44 @@ position:relative;
 z-index:2;
 }
 
-/* CAHAYA JALAN */
+/* CAHAYA HALUS */
 button::before{
 content:"";
 position:absolute;
 top:0;
 left:-100%;
-width:60%;
+width:50%;
 height:100%;
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,255,255,0.9),
+rgba(255,255,255,0.6),
 transparent
 );
 transform:skewX(-25deg);
 }
 
-/* ANIMASI */
+/* ANIMASI HALUS */
 button:hover::before{
-animation:shineBtn 0.8s forwards;
+animation:shineBtn 0.9s ease;
 }
 
 @keyframes shineBtn{
 0%{left:-100%;}
-100%{left:130%;}
+100%{left:120%;}
 }
 
 /* HOVER */
 button:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px rgba(255,215,0,1);
+background:#4db8ff;
+box-shadow:0 0 18px #4db8ff;
 }
 
-/* TEXT */
+/* INFO */
 .info{
 margin-top:30px;
-color:#ccc;
+color:#ddd;
 font-size:14px;
-}
-
-h2{
-background:linear-gradient(45deg,#fff,#ffd700);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
 </style>
@@ -174,6 +155,7 @@ background:linear-gradient(45deg,#fff,#ffd700);
 
 <input type="text" id="search" placeholder="Masukkan nama situs...">
 
+<!-- WAJIB pakai span -->
 <button onclick="_0x12()"><span>CARI</span></button>
 
 <div class="info">
