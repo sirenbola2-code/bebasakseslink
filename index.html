@@ -12,10 +12,7 @@ font-family:Arial;
 text-align:center;
 margin-top:70px;
 color:white;
-
-/* NAVY DARK */
-background:linear-gradient(135deg,#020617,#06152e,#0a3d91);
-
+background:linear-gradient(135deg,#06152e,#0a3d91,#1b6cff);
 overflow:hidden;
 }
 
@@ -25,7 +22,7 @@ background:rgba(0,0,0,0.55);
 display:inline-block;
 padding:40px;
 border-radius:15px;
-box-shadow:0 0 25px rgba(0,120,255,0.4);
+box-shadow:0 0 30px rgba(0,140,255,0.7);
 }
 
 /* LOGO */
@@ -39,7 +36,7 @@ overflow:hidden;
 width:220px;
 }
 
-/* EFEK KILAU LOGO */
+/* EFEK KILAU */
 .logo-wrap:after{
 content:"";
 position:absolute;
@@ -50,7 +47,7 @@ height:100%;
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,255,255,0.8),
+rgba(255,255,255,0.9),
 transparent
 );
 transform:skewX(-25deg);
@@ -71,68 +68,48 @@ border:none;
 outline:none;
 }
 
-/* ========================= */
-/* BUTTON NAVY + SHINE HALUS */
-/* ========================= */
-
+/* BUTTON */
 button{
-position:relative;
 padding:12px 20px;
 border:none;
 background:#1da1ff;
 color:white;
 border-radius:6px;
 cursor:pointer;
-overflow:hidden;
-
 box-shadow:0 0 10px #1da1ff;
-transition:0.3s;
 }
 
-/* TEXT */
-button span{
-position:relative;
-z-index:2;
-}
-
-/* CAHAYA HALUS */
-button::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:50%;
-height:100%;
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.6),
-transparent
-);
-transform:skewX(-25deg);
-}
-
-/* ANIMASI HALUS */
-button:hover::before{
-animation:shineBtn 0.9s ease;
-}
-
-@keyframes shineBtn{
-0%{left:-100%;}
-100%{left:120%;}
-}
-
-/* HOVER */
 button:hover{
 background:#4db8ff;
-box-shadow:0 0 18px #4db8ff;
+box-shadow:0 0 20px #4db8ff;
 }
 
-/* INFO */
 .info{
 margin-top:30px;
 color:#ddd;
 font-size:14px;
+}
+
+/* LIVECHAT */
+.livechat{
+position:fixed;
+right:20px;
+top:50%;
+transform:translateY(-50%);
+background:#1da1ff;
+color:white;
+padding:10px 14px;
+border-radius:8px;
+font-size:14px;
+text-decoration:none;
+box-shadow:0 0 10px rgba(0,140,255,0.8);
+transition:0.3s;
+z-index:999;
+}
+
+.livechat:hover{
+background:#4db8ff;
+box-shadow:0 0 15px rgba(77,184,255,1);
 }
 
 </style>
@@ -154,9 +131,7 @@ font-size:14px;
 <br>
 
 <input type="text" id="search" placeholder="Masukkan nama situs...">
-
-<!-- WAJIB pakai span -->
-<button onclick="_0x12()"><span>CARI</span></button>
+<button onclick="_0x12()">CARI</button>
 
 <div class="info">
 <p><b>Lindungi lalu lintas Online Anda</b></p>
@@ -165,8 +140,14 @@ font-size:14px;
 
 </div>
 
+<!-- LIVECHAT -->
+<a href="https://direct.lc.chat/12786534/" target="_blank" class="livechat">
+💬 Live Chat
+</a>
+
 <script>
 
+/* fungsi cari (diacak sedikit) */
 function _0x12(){
 var _0x1=document.getElementById("search").value.toLowerCase();
 if(_0x1=="sirenbola"){
@@ -176,17 +157,25 @@ alert("Situs tidak ditemukan");
 }
 }
 
+/* blok klik kanan */
 document.addEventListener("contextmenu",function(e){
 e.preventDefault();
 });
 
+/* blok inspect */
 document.onkeydown=function(e){
 
-if(e.keyCode==123){ return false; }
+if(e.keyCode==123){
+return false;
+}
 
-if(e.ctrlKey && e.shiftKey && e.keyCode==73){ return false; }
+if(e.ctrlKey && e.shiftKey && e.keyCode==73){
+return false;
+}
 
-if(e.ctrlKey && e.keyCode==85){ return false; }
+if(e.ctrlKey && e.keyCode==85){
+return false;
+}
 
 };
 
