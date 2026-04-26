@@ -1,188 +1,54 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Pencarian Situs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-
-body{
-font-family:Arial;
-text-align:center;
-margin-top:70px;
-color:white;
-
-/* NAVY BLACK BLUE */
-background:linear-gradient(135deg,#020617,#06152e,#0a3d91,#000814);
-
-overflow:hidden;
-}
-
-/* BOX */
-.container{
-background:rgba(0,0,0,0.6);
-display:inline-block;
-padding:40px;
-border-radius:18px;
-
-/* GLOW GOLD + BLUE */
-box-shadow: 
-0 0 20px rgba(255,215,0,0.3),
-0 0 40px rgba(0,140,255,0.4);
-
-backdrop-filter: blur(10px);
-}
-
-/* LOGO */
-.logo-wrap{
-position:relative;
-display:inline-block;
-overflow:hidden;
-}
-
-.logo{
-width:220px;
-}
-
-/* EFEK KILAU GOLD */
-.logo-wrap:after{
-content:"";
-position:absolute;
-top:0;
-left:-80%;
-width:50%;
-height:100%;
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,215,0,0.9),
-transparent
-);
-transform:skewX(-25deg);
-animation:shine 3s infinite;
-}
-
-@keyframes shine{
-0%{left:-80%;}
-100%{left:130%;}
-}
-
-/* INPUT */
-input{
-padding:12px;
-width:250px;
-border-radius:8px;
-border:none;
-outline:none;
-
-/* efek glow halus */
-background:#0f172a;
-color:white;
-box-shadow:0 0 10px rgba(255,215,0,0.2);
-}
-
 /* BUTTON */
 button{
+position:relative;
 padding:12px 20px;
 border:none;
-
-/* GRADIENT BLUE → GOLD */
 background:linear-gradient(45deg,#1da1ff,#ffd700);
-
 color:black;
 font-weight:bold;
 border-radius:8px;
 cursor:pointer;
+overflow:hidden;
 
-/* GLOW GOLD */
-box-shadow:0 0 15px rgba(255,215,0,0.7);
+/* glow halus */
+box-shadow:0 0 15px rgba(255,215,0,0.6);
 
 transition:0.3s;
 }
 
+/* EFEK CAHAYA */
+button::after{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+
+/* GOLD SHINE */
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.8),
+transparent
+);
+
+transform:skewX(-25deg);
+}
+
+/* ANIMASI SAAT HOVER */
+button:hover::after{
+animation:shineMove 0.8s ease;
+}
+
+@keyframes shineMove{
+0%{left:-75%;}
+100%{left:125%;}
+}
+
+/* HOVER EFFECT */
 button:hover{
-background:linear-gradient(45deg,#4db8ff,#ffea70);
-box-shadow:0 0 25px rgba(255,215,0,1);
 transform:scale(1.05);
+box-shadow:0 0 25px rgba(255,215,0,1);
+background:linear-gradient(45deg,#4db8ff,#ffea70);
 }
-
-/* TEXT INFO */
-.info{
-margin-top:30px;
-color:#ccc;
-font-size:14px;
-}
-
-h2{
-/* TEXT GOLD EFFECT */
-background:linear-gradient(45deg,#fff,#ffd700);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="logo-wrap">
-<img src="https://media.fastchecker.us/idnsmedia/is/assets/themes/aadrgq/img/logo-big.png?v=1" class="logo">
-</div>
-
-<h2>Pencarian Situs</h2>
-
-<p>1. Masukkan nama situs</p>
-<p>2. Klik tombol <b>CARI</b></p>
-
-<br>
-
-<input type="text" id="search" placeholder="Masukkan nama situs...">
-<button onclick="_0x12()">CARI</button>
-
-<div class="info">
-<p><b>Lindungi lalu lintas Online Anda</b></p>
-<p>Bebas Kendala dimana & kapan saja</p>
-</div>
-
-</div>
-
-<script>
-
-function _0x12(){
-var _0x1=document.getElementById("search").value.toLowerCase();
-if(_0x1=="sirenbola"){
-window.location.href="https://sirenbola.com";
-}else{
-alert("Situs tidak ditemukan");
-}
-}
-
-/* blok klik kanan */
-document.addEventListener("contextmenu",function(e){
-e.preventDefault();
-});
-
-/* blok inspect */
-document.onkeydown=function(e){
-
-if(e.keyCode==123){
-return false;
-}
-
-if(e.ctrlKey && e.shiftKey && e.keyCode==73){
-return false;
-}
-
-if(e.ctrlKey && e.keyCode==85){
-return false;
-}
-
-};
-
-</script>
-
-</body>
-</html>
